@@ -1,4 +1,4 @@
-package com.vimit.crackig.coursera.strings;
+package com.vimit.coursera.string;
 
 import java.io.BufferedReader;
 import java.io.IOException;

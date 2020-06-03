@@ -1,6 +1,6 @@
 package com.vimit.Array;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class LargestSubArray {
     public static void main(String[] args) {

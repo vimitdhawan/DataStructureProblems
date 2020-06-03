@@ -1,22 +1,24 @@
-package com.vimit.crackig.coursera.strings;
+package com.vimit.coursera.string;
 
 import java.io.*;
 import java.util.*;
 
-class Node
+/*class Node
 {
     public static final int Letters =  4;
     public static final int NA      = -1;
     public int next [];
+    public boolean patternEnd;
 
     Node ()
     {
         next = new int [Letters];
         Arrays.fill (next, NA);
+        patternEnd = false;
     }
-}
+}*/
 
-public class TrieMatching implements Runnable {
+public class TrieMatchingExtended implements Runnable {
     int letterToIndex (char letter)
     {
         switch (letter)
@@ -31,17 +33,20 @@ public class TrieMatching implements Runnable {
 
     List <Integer> solve (String text, int n, List <String> patterns) {
         List <Integer> result = new ArrayList <Integer> ();
-        List<Map<Character, Integer>> patternBus = buildTrie(patterns.toArray(new String[patterns.size()]));
+        List<Map<Character, Integer>>  trie = buildTrie(patterns.toArray(new String[patterns.size()]));
         for(int i =0; i<text.length(); i++){
-            Map<Character, Integer> node = patternBus.get(0);
+            Map<Character, Integer> node = trie.get(0);
             int trieIndex = i ;
             while(trieIndex<text.length()){
                 Character trieChar = text.charAt(trieIndex);
                 if(node.containsKey(trieChar)){
-                    node = patternBus.get(node.get(trieChar));
+                    node = trie.get(node.get(trieChar));
                     if(node.size()==0){
                         result.add(i);
                         break;
+                    }
+                    if(node.containsKey('$') && !result.contains(i)){
+                        result.add(i);
                     }
                     trieIndex++;
                 } else {
@@ -54,6 +59,7 @@ public class TrieMatching implements Runnable {
 
         return result;
     }
+
 
     List<Map<Character, Integer>> buildTrie(String[] patterns) {
         List<Map<Character, Integer>> trie = new ArrayList<Map<Character, Integer>>();
@@ -70,6 +76,7 @@ public class TrieMatching implements Runnable {
                     node = trie.get(trie.size() - 1);
                 }
             }
+            node.put('$',-1);
         }
         // write your code here
 
@@ -100,7 +107,7 @@ public class TrieMatching implements Runnable {
     }
 
     public static void main (String [] args) {
-        new Thread (new TrieMatching ()).start ();
+        new Thread (new TrieMatchingExtended ()).start ();
     }
 }
 
