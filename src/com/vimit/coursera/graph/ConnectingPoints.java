@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package com.vimit.coursera.graph;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -96,6 +96,4 @@ public class ConnectingPoints {
         System.out.println(minimumDistance(x, y));
     }
 }
-
-
 
