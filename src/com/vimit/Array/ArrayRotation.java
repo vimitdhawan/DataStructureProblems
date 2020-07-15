@@ -5,7 +5,7 @@ public class ArrayRotation {
         // NOTE: The following input values will be used for testing your solution.
         int[] array1 = {1, 2, 3, 4, 5, 6, 7};
         int[] array2a = {4, 5, 6, 7, 8, 1, 2, 3};
-        // isRotation(array1, array2a) should return false.
+        System.out.println( isRotation(array1, array2a)); // should return false.
         int[] array2b = {4, 5, 6, 7, 1, 2, 3};
         // isRotation(array1, array2b) should return true.
         int[] array2c = {4, 5, 6, 9, 1, 2, 3};
