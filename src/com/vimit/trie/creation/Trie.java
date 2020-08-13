@@ -1,30 +1,29 @@
-package com.vimit.trie;
+package com.vimit.trie.creation;
 
 public class Trie {
-    final TrieNode root;
-    private static final int MAX_SIZE = 26;
+    final public TrieNode root;
     public Trie() {
-        root = new TrieNode();
+        this.root = new TrieNode();
     }
 
     public boolean query(String s){
-        TrieNode current = root;
+        TrieNode current = this.root;
         for(int i =0;  i<s.length(); i++){
-            current = current.next(s.charAt(i));
             if(current== null){
                 return false;
             }
+            current = current.next(s.charAt(i));
         }
         return current.leaf;
     }
 
     public void insert(String s){
-        TrieNode current = root;
+        TrieNode current = this.root;
         for(int i =0; i<s.length(); i++){
-            current = current.next(s.charAt(i));
-            if(current==null){
-                current = new TrieNode();
+            if(current.child[s.charAt(i)-'A']==null){
+                current.child[s.charAt(i)-'A'] = new TrieNode();
             }
+            current = current.next(s.charAt(i));
         }
         current.leaf = true;
     }
@@ -32,12 +31,12 @@ public class Trie {
     // true if string successfully remove
     // false if string does not exist
     public boolean delete(String s){
-        TrieNode current = root;
+        TrieNode current = this.root;
         for(int i =0;  i<s.length(); i++){
-            current = current.next(s.charAt(i));
-            if(current== null){
+            if(current==null){
                 return false;
             }
+            current = current.next(s.charAt(i));
         }
         current.leaf = false;
         return true;
@@ -49,18 +48,6 @@ public class Trie {
             return true;
         }
         return  false;
-    }
-
-
-    private  class TrieNode {
-        private boolean leaf;
-        private TrieNode[] child;
-        TrieNode(){
-            child = new TrieNode[MAX_SIZE];
-        }
-        public TrieNode next(char c){
-            return child[c-'A'];
-        }
     }
 
 

@@ -3,9 +3,12 @@ package com.vimit.Array;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class KadaneAlgorithm {
     public static void main(String[] args) throws IOException {
+        List<Integer> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         // taking input of number of testcase
         int testCase = Integer.parseInt(br.readLine());
