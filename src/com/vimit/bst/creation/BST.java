@@ -20,6 +20,7 @@ public class BST {
                    traverseNode = traverseNode.right;
                } else {
                    traverseNode.right = newNode;
+                   newNode.parent = traverseNode;
                    return this.head;
                }
            } else {
@@ -27,6 +28,7 @@ public class BST {
                    traverseNode = traverseNode.left;
                } else {
                    traverseNode.left = newNode;
+                   newNode.parent = traverseNode;
                    return this.head;
                }
 
@@ -35,7 +37,50 @@ public class BST {
        return this.head;
    }
 
-   public void inOrderTraversal(Node temp) {
+   public Node find(int data){
+       Node node = recursiveFind(data, head);
+       return node;
+   }
+
+   public Node next(Node node){
+       if(node.right !=null){
+           return leftDecendent(node.right);
+       }
+       return rightAncestor(head);
+   }
+
+    private Node rightAncestor(Node node) {
+       if(node.data < node.parent.data){
+           return node;
+       }
+       return rightAncestor(node.parent);
+
+    }
+
+    private Node leftDecendent(Node node) {
+       if(node.left == null)
+           return node;
+       return leftDecendent(node.left);
+    }
+
+    private Node recursiveFind(int data, Node node) {
+       if(node.data == data) return node;
+       else if(data > node.data){
+           if(node.right==null){
+               return node;
+           }
+           return recursiveFind(data, node.right);
+       }
+       else {
+           if(node.left==null){
+               return node;
+           }
+           return recursiveFind(data, node.left);
+       }
+
+    }
+
+    public void inOrderTraversal(Node temp) {
        if(temp.left!=null){
            inOrderTraversal(temp.left);
        }
