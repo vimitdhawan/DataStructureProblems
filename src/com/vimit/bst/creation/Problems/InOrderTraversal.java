@@ -10,7 +10,9 @@ import java.util.Stack;
 public class InOrderTraversal {
     public static void main(String[] args) {
        BST bst =  BST.createBst();
+        bst.inOrderTraversal(bst.head);
        List<Integer> result = inorderTraversal(bst.head);
+       System.out.println(result);
     }
 
     public static List<Integer> inorderTraversal(Node root) {
@@ -19,11 +21,18 @@ public class InOrderTraversal {
         List<Integer> output = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
         traverseLeft(currentNode, stack);
-        Node node = stack.pop();
+        Node node =null;
+        if(!stack.isEmpty())
+            node = stack.pop();
         while(node != null){
             output.add(node.data);
             traverseLeft(node.right, stack);
-            node = stack.pop();
+            if(!stack.isEmpty()){
+                node = stack.pop();
+            } else{
+                node =null;
+            }
+
         }
         return output;
 
