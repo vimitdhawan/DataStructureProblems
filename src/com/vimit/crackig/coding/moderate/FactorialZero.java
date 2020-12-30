@@ -2,10 +2,10 @@ package com.vimit.crackig.coding.moderate;
 
 public class FactorialZero {
     public static void main(String[] args) {
-        int num = 10;
+        int num = 1808548329;
         int count = getFactorialZero(num);
-        int factorial = getFactorial(num);
-        System.out.println(factorial);
+        // int factorial = getFactorial(num);
+       //  System.out.println(factorial);
         System.out.println(count);
     }
 
@@ -20,7 +20,7 @@ public class FactorialZero {
     private static int getFactorialZero(int i) {
         int count =0;
         for(int num=5; (i/num)>0; num = num*5) {
-            count = count + (i/num);
+            count = count + i/num ;
         }
         return count;
     }

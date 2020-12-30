@@ -1,4 +1,4 @@
-package com.vimit.crackig.leetcode;
+package com.vimit.leetcode;
 
 /*Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
 

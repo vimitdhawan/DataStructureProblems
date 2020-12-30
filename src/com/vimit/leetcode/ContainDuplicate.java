@@ -1,4 +1,4 @@
-package com.vimit.crackig.leetcode;
+package com.vimit.leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
