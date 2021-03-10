@@ -14,7 +14,6 @@ public class Permutation {
         for (int i = 0; i < testCase; i++) {
             String input = br.readLine();
             printPermutation(input, 0);
-
         }
     }
 
