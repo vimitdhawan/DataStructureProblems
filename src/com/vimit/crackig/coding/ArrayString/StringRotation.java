@@ -2,6 +2,8 @@ package com.vimit.crackig.coding.ArrayString;
 
 public class StringRotation {
     public static void main(String[] args) {
+        System.out.println(true | false);
+        String[] temp ={""};
         StringRotation sr = new StringRotation();
         System.out.println(sr.rotateString("vcuszhlbtpmksjleuchmjffufrwpiddgyynfujnqblngzoogzg", "fufrwpiddgyynfujnqblngzoogzgvcuszhlbtpmksjleuchmjf"));
     }
