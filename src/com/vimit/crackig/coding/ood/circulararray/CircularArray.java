@@ -1,6 +1,6 @@
 package com.vimit.crackig.coding.ood.circulararray;
 
-public interface CircularArray<T> {
+public interface CircularArray<T> extends Iterable<T> {
 
     T get(int index);
 

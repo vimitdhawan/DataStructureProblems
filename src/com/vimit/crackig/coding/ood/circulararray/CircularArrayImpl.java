@@ -56,4 +56,27 @@ public class CircularArrayImpl<T> implements CircularArray<T> {
                 '}';
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new CircularArrayIterator<>(items);
+    }
+
+    private class CircularArrayIterator<TI> implements Iterator<TI>{
+        private int _current = 0;
+        private TI[] _items;
+        public CircularArrayIterator(TI[] arr){
+            _items = arr.clone();
+        }
+        @Override
+        public boolean hasNext() {
+            return _current <_items.length;
+        }
+
+        @Override
+        public TI next() {
+            TI item = _items[rotateIndex(_current)];
+            _current++;
+            return item;
+        }
+    }
 }
