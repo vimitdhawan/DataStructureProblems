@@ -7,7 +7,6 @@ package com.vimit.crackig.coding.sorted;
 // 5 6 7 8 9 10 1 2 3 <- array
 // 10 <- output array
 
-import java.io.*;
 import java.util.*;
 
 public class SearchRotatedArray{
@@ -24,7 +23,7 @@ public class SearchRotatedArray{
             }
             int target = sc.nextInt();
 
-            Solution ob = new Solution();
+            WaveArraySolution ob = new WaveArraySolution();
             System.out.println(ob.Search(array,target));
             t--;
         }
