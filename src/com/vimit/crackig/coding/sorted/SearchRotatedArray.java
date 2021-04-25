@@ -23,7 +23,7 @@ public class SearchRotatedArray{
             }
             int target = sc.nextInt();
 
-            WaveArraySolution ob = new WaveArraySolution();
+            RotatedSolution ob = new RotatedSolution();
             System.out.println(ob.Search(array,target));
             t--;
         }
@@ -33,7 +33,7 @@ public class SearchRotatedArray{
 
 //User function Template for Java
 
-class Solution
+class RotatedSolution
 {
     static int Search(int array[], int target)
     {

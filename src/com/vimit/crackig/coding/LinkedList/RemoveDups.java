@@ -86,6 +86,8 @@ class RemoveDupsSolution
     public Node removeDuplicates(Node head)
     {
         Set<Integer> uniqueElements = new HashSet<>();
+        List<Integer> list = new ArrayList<>();
+        list.get(0);
         Node currentNode = head;
         uniqueElements.add(currentNode.data);
         while(currentNode.next!=null){
