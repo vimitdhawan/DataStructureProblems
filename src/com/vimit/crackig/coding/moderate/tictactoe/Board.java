@@ -11,12 +11,8 @@ public class Board {
         colsWon = new int[size];
         board = new Unit[size][size];
     }
-    public boolean move(Unit unit, int row, int column){
-        board[row][column] = unit;
-        return  hasWon(unit, row, column);
-    }
-
     public boolean hasWon(Unit unit, int row, int column){
+        board[row][column] = unit;
         rowsWon[row] = rowsWon[row] + unit.getValue();
         colsWon[column] =  colsWon[row] + unit.getValue();
         if(row == column){
@@ -27,4 +23,5 @@ public class Board {
         }
         return Math.abs(rowsWon[row]) == board.length || Math.abs(colsWon[row]) == board.length ||  Math.abs(frontDiagonal) == board.length || Math.abs(reverseDiagonal) == board.length;
     }
+
 }
