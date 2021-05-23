@@ -32,34 +32,30 @@ class MedianStream
 
 class FindMedian
 {
-    static PriorityQueue<Integer> max = new PriorityQueue<>(Collections.reverseOrder());
-    static PriorityQueue<Integer> min = new PriorityQueue<>();
+    static PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+    static PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
     // Function to insert heap
-    public static void insertHeap(int x)
+    public static void insertHeap(int num)
     {
-        if(max.isEmpty()){
-            max.add(x);
-        } else if(x > max.peek()){
-            min.add(x);
-            balanceHeaps();
-        } else{
-            max.add(x);
-            balanceHeaps();
+        if(maxHeap.isEmpty()){
+            maxHeap.add(num);
+        } else if(maxHeap.peek()<num){
+            minHeap.add(num);
+        }else{
+            maxHeap.add(num);
         }
+        balanceHeaps();
         // add your code here
     }
 
     // Function to balance Heaps
     public static void balanceHeaps()
     {
-        int sizeDiff = min.size()>max.size() ? min.size()-max.size():max.size()-min.size();
-        if(sizeDiff>1){
-            if(min.size()>max.size()){
-                max.add(min.poll());
-            }else{
-                min.add(max.poll());
-            }
+        if(minHeap.size()>maxHeap.size()){
+            maxHeap.add(minHeap.poll());
+        }else if((maxHeap.size()-minHeap.size())>1){
+            minHeap.add(maxHeap.poll());
         }
 
     }
@@ -70,12 +66,11 @@ class FindMedian
     public static double getMedian()
     {
 
-        if(min.size() == max.size()){
-            return (min.peek() + max.peek())/2;
-        } else if(min.size()>max.size()){
-            return Double.valueOf(min.peek());
-        } else{
-            return Double.valueOf(max.peek());
+        double divider =2;
+        if(minHeap.size() == maxHeap.size()){
+            return (maxHeap.peek() + minHeap.peek())/divider;
+        }else{
+            return maxHeap.peek();
         }
 
     }
