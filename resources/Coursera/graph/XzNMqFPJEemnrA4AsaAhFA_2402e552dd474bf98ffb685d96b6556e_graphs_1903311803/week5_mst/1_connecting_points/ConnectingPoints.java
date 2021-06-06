@@ -1,7 +1,5 @@
-import java.util.Scanner;
+import java.util.*;
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class ConnectingPoints {
@@ -53,6 +51,8 @@ public class ConnectingPoints {
     }
 
     private static double minimumDistance(int[] x, int[] y) {
+        List<Integer> list = new ArrayList<>();
+        list.stream().map(l -> l).
         double result = 0.;
         //write your code here
         int n = x.length;

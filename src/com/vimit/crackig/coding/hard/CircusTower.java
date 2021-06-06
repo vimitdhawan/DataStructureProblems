@@ -75,6 +75,15 @@ public class CircusTower {
         return mx == Integer.MIN_VALUE ? 1 : mx;
     }
 
+    class Test implements Comparable<Test>{
+
+
+        @Override
+        public int compareTo(Test o) {
+            return 0;
+        }
+    }
+
 
 }
 
