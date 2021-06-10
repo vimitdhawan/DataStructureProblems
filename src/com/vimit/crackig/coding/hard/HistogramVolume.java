@@ -2,6 +2,8 @@ package com.vimit.crackig.coding.hard;
 
 public class HistogramVolume {
     public static void main(String[] args) {
+        int a = 2147483647;
+        System.out.print(a+1);
         HistogramVolume  vol = new HistogramVolume();
         int res = vol.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1});
         System.out.println(res);
