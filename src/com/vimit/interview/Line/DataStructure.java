@@ -144,7 +144,7 @@ class LRUCache<K, V> {
 
     }
 
-    private static class Node<K, V> {
+    private class Node<K, V> {
         Node<K, V> next;
         Node<K, V> previous;
         K key;

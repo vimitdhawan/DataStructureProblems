@@ -5,7 +5,6 @@ import java.util.Set;
 
 public class ContainDuplicate {
     public static void main(String[] args) {
-
         int[] arr = {1,2,3,1};
         boolean res = containsDuplicate(arr);
 
