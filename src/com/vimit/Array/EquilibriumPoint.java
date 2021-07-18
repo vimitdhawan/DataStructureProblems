@@ -2,6 +2,7 @@ package com.vimit.Array;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 // it is a point where right side element is equal to left side [1 3 5 2 2] // 5 is equilibrium point
 public class EquilibriumPoint {
