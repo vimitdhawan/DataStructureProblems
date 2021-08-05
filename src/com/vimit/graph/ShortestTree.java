@@ -2,6 +2,7 @@ package com.vimit.graph;
 
 import java.util.*;
 
+// get shortest path
 public class ShortestTree {
     public static void main(String[] args) {
         int N=3;

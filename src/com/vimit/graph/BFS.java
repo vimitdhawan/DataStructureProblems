@@ -2,6 +2,13 @@ package com.vimit.graph;
 
 import java.util.*;
 public class BFS {
+    public static void main(String[] args) {
+        LinkedList<Integer> queue = new LinkedList<>();
+        queue.addFirst(3);
+        queue.addFirst(5);
+        System.out.println(queue.removeLast());
+    }
+
     public ArrayList<Integer> bfsOfGraph(int V,ArrayList<ArrayList<Integer>> adj)
     {
         if(V <= 0) return new ArrayList<>();
@@ -15,7 +22,7 @@ public class BFS {
             result.add(element);
             for(int currentElement: adj.get(element)){
                 if(!visited[currentElement]){
-                    queue.addFirst(currentElement);
+                    queue.add(currentElement);
                 }
             }
 

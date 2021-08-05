@@ -3,7 +3,7 @@ package com.vimit.graph;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
+// Djsktra Algo
 public class MinimumCostPath {
     public static void main(String[] args) {
 
