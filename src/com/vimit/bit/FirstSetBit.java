@@ -1,4 +1,4 @@
-package com.vimit.BitManipulation;
+package com.vimit.bit;
 
 import java.io.BufferedReader;
 import java.io.IOException;
